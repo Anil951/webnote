@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+    <title>Webnote</title>
+    <link rel="icon"
+	href="https://cdn-icons-png.flaticon.com/512/1686/1686886.png"
+	type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            /* background-image: url("https://img.freepik.com/premium-photo/modern-dark-office-workspace-with-keyboard-tablet-notebook-copy-space-black-background_67155-21502.jpg"); 
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: 280px -50px 100px; */
+
+            /* background-image: url("audired.jpg");
+            background-position: top; */
+
+            background-color: rgb(41, 44, 45);
+
+        }
+
+        .wrapper {
+            width: 800px;
+            height: 500px;
+            position: relative;
+            top: 30px;
+            /* margin: 20px auto; */
+            border-radius: 0px 0px 40px 40px;
+            /* border:2px solid white; */
+            box-shadow: 2px 18px 70px 10px #000000;
+            overflow: hidden;
+            /* margin: 0px auto 0px auto; */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .login-text {
+            width: 800px;
+            height: 450px;
+            /* background: linear-gradient(to left, #434546, #000000); */
+            background-color: rgb(31, 30, 30);
+            position: absolute;
+            top: -330px;
+            transition: all 0.5s ease-in-out;
+            z-index: 11;
+        }
+
+        .text {
+            height: fit-content;
+            width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            transition: all 0.3s ease-in-out;
+            transition-delay: 0.3s;
+            position: relative;
+            top: 70px;
+            font-size: x-large;
+            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
+        }
+
+        .cta {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #fff;
+            position: absolute;
+            bottom: -30px;
+            left: 370px;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .call-text {
+            background-color: rgb(114, 107, 107);
+            width: 800px;
+            height: 450px;
+            position: absolute;
+            top: 100px;
+            padding: 10%;
+            box-sizing: border-box;
+            text-align: center;
+
+        }
+
+        .call-text #title {
+            width: fit-content;
+            position: absolute;
+            top: 120px;
+            display: block;
+            color: black;
+            font-size: 65px;
+            font-family: 'Secular One', sans-serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .call-text #title span {
+            color: white;
+            stroke-width: 0.1px;
+            stroke-opacity: 10%;
+            text-shadow: 0 0 3px #000000;
+            -webkit-text-stroke-color: black;
+        }
+
+        .call-text #subtitle {
+            width: fit-content;
+            position: absolute;
+            top: 200px;
+            left: 110px;
+            display: block;
+            color: rgb(26, 25, 25);
+            font-size: medium;
+            font-family: 'Secular One', sans-serif;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .call-text #subtitle span {
+            text-decoration: underline;
+            font-size: large;
+            color: black;
+        }
+
+        .call-text #new-register {
+            width: fit-content;
+            position: absolute;
+            top: 235px;
+            left: 170px;
+            display: block;
+            color: black;
+            font-size: medium;
+            font-family: 'Secular One', sans-serif;
+
+        }
+
+        .call-text #new-register button {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            font-size: smaller;
+            border: 0px;
+            border-radius: 8px;
+        }
+
+        .call-text #new-register button:hover {
+            box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.24);
+        }
+
+
+        .show-hide {
+            display: block;
+        }
+
+        .expand {
+            transform: translateY(330px);
+        }
+
+
+        /* login form css */
+        .call-text #login {
+            height: 220px;
+            width: 180px;
+            background-color: black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 45%;
+            left: 75%;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 40px 35px;
+
+        }
+
+        #login * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        #login h3 {
+            font-size: large;
+            font-weight: 500;
+            line-height: 30px;
+            text-align: center;
+            margin: -20px auto 20px auto;
+            width: fit-content;
+        }
+
+        #login label {
+            display: block;
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: -100px;
+        }
+
+        #username,
+        #passwordd {
+            display: block;
+            height: 35px;
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
+            padding: 0 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        ::placeholder {
+            color: #e5e5e5;
+            font-size: small;
+        }
+
+        #loginsubmit {
+            margin-top: 20px;
+            height: 40px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        /* back button css */
+        #back {
+            position: fixed;
+            top: 25px;
+            left: 10px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: fit-content;
+            scale:0.9;
+        }
+
+
+        /* registration form css */
+
+        #register {
+            height: 420px;
+            width: 800px;
+            background-color: transparent;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 30px;
+            border-radius: 20px 0px 20px 0px;
+            backdrop-filter: blur(100px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #register * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        #register h3 {
+            font-size: x-large;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+            margin-top: -20px;
+        }
+
+        #register #mainnote {
+            font-size: small;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+            margin-top: -50px;
+            margin-left: 550px;
+            color: rgb(238, 71, 71);
+        }
+
+        #register label {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        #namee,
+        #phone,
+        #dob,
+        #address,
+
+        #readcaptcha,
+        #password,
+        #mail {
+            display: block;
+            height: 40px;
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 5px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        #img {
+            display: block;
+            height: fit-content;
+            width: 200px;
+            padding: 0 10px;
+            margin-top: 20px;
+            position: relative;
+            left: -25px;
+        }
+
+
+
+        #register label {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+
+        #address {
+            height: 80px;
+            width: 250px;
+        }
+
+
+
+        #registersubmit {
+            margin-top: 30px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .boxes {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* to remove the range option in input type=number */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .pakka:after {
+            content: '*';
+            color: rgb(238, 71, 71);
+        }
+        textarea::-webkit-input-placeholder {
+		    padding-top:26px;
+		}
+
+    
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="login-text">
+            <button class="cta"><svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode" data-name="Isolation Mode" viewBox="0 0 24 24" width="30" height="30"><path d="M0,8.057l9.52,9.507a3.507,3.507,0,0,0,4.948,0L24,8.046,21.879,5.929l-9.531,9.517a.5.5,0,0,1-.707,0L2.121,5.94Z"/></svg></button>
+            <div class="text">
+                Web-NOTE is a web application made to make notes and also provides an option to SAVE and DOWNLOAD your note.
+            </div>
+        </div>
+        <div class="call-text">
+            <div id="title">Web <span>Note</span>
+            </div>
+            <div id="subtitle">The <span> simplest </span> way to keep notes</div>
+            <div id="new-register"> new?? <button onclick="getstarted()">get started</button></div>
+
+            <form name="login" action="login.jsp" method="post">
+                <div id="login">
+                    <h3>Login Here</h3>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username">
+
+                    <label for="password">Password </label>
+                    <input type="password" id="passwordd" name="passwordd" placeholder="Password">
+
+                    <input type="submit" id="loginsubmit" value="Log In">
+                    
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+        <a onclick="back()" id="back" onclick="back()" style="display: none;">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADw0lEQVR4nO2aSU8UURDH24CCwaigoPGkRwNRv4Q7iHoT9SaBi0LUK+BZPZmY+Dk0aDQR4w6Ke1wQPbkcDHoTNWB+pvD/wjP09HT39CwY/skkk6nXVfW66r3aJggW8J8CaAD2AmeAQeAN8A34pY99fy2arWkH6oNKAFALHAauAb9JjmngKnAIqCnHBpYCJ4DPnlI/gSGgT5bZaG8cWKxPvX4zWj9wQ884fAKO28sp1SZ2A+89BR4CR4AVKXitBDqBUY/fO2Bnsd3ogifwEbAtQ/47gCce//OZWwdYK8UN34GjQFWmQv7KqQJ6gEnP2muyYr5B5ka3TksmjKNlbgLGJHPcdCiUYaPH8AGwOjNt88uuB+5Itp3JtYWcCedO94C6zLXNr0MdMOy5WfIz4x1sc6eGomgaT49VnlecT3PFuoNd9DMR88xMSqcdSYKdixNHgwoB0Osd/vwuBpz04kTmV2xaANXAU+nWm29xjVIFw9agwgDskm6fI62i5G3mhiggcFq6cb8QhXMBWOTdpB1RCy2LNRzJuSh6E6/0/GMTmpRHHABdknElqp6YVkaaKAG0NMLbxOvUwSt+oLT6ZipUT2CfFLkeh6H3XBPwQs9aMbUuKDKAm5LXFkY8K2JfQku8LIUlfACnJPN0GNFKUMOeIH4eVlJLhHjPxTDiWxE3ziFGu1PJLOEANLsXGEb8KmJDDEs8L4clHCwLl/wvYUS7CQxL5hD/vcfdJoqJ27l08AK34WchG3lWgo3cKmQjaVxrrEyu1RjlWv/NYR8UsT3F9VtSywD7o65fFxD753tA3CviUEKmTaW2DLMpSmuuZMwljSsrOGls8JLG5bkWWUPZ0FlgGv80C6XDAHRLxuWoRQe1aDRIAW3GytHhNM/ng+KY1TqGA/kCzUct3B5UGIBW6fYh7xhCrX2080prPjyTbsfidhhdr7cnqBAw+4LHYg+FbD6hh6wptqnoWubXZwvwQzolG2VoPuHewKqiaRkvgxiXLufSMKhV4xg1ksvRxF4GjEiHkdRzRr0NK57cWKExc22jA99dyX5X8MBHg55xz802Z6Zt9JkYl0zLytdnxXiN52aTaihXZ8J87hV73DvY5k5NWQup9S6AmTQkq+mrIraNMvzq81xRZ++avjqzo15sV5p/MegcdHtph3OlzKbFcazT66UzKCO19HpAfadmTZuW6GPfW1QUDWit6xO4tONYuf4BYblZhzWUVQIkxZQq0wNl2UAYrKFsvVir2oBLqksmvD/VTCjNv6g1bTnriQUE8x9/AHfGKb0PMWUfAAAAAElFTkSuQmCC">
+        </a>
+
+    <form name="myform" action="register.jsp" method="post">
+        <div id="register" style="display: none;">
+
+
+            <h3>Register Here</h3>
+
+            <div id="mainnote">* fields are compulsory </div>
+
+            <div class="boxes">
+                <label class="pakka" for="namee">Username </label>
+                <input onfocusout= "nameoutfoucus()" type="text" id="namee" name="namee" placeholder="Username">
+
+                <label class="pakka" for="password">Password </label>
+                <input type="password" onfocusout= "nameoutfoucus()" id="password" name="password" placeholder="Password">
+
+            </div>
+
+            <div class="boxes">
+                <label class="pakka" for="phone">Phone </label>
+                <input style="margin-left: 33px;" type="number" id="phone" name="phone" placeholder="Phone"
+                    onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'" onfocusout= "nameoutfoucus()">
+     
+                <label class="pakka" for="mail">Mail </label>
+                <input type="text" style="margin-left: 47px;"  onfocusout="nameoutfoucus()" id="mail" name="mail" placeholder="Mail">
+ 
+            </div>
+
+            <div class="boxes">
+                <label class="pakka" for="dob">DOB </label>
+                <input type="date" style="margin-left: 50px;" id="dob" value="dob" name="dob" max="2023-04-28">
+
+                <div id="genderr">
+                    <label class="pakka" for="gender">Gender : </label>
+                    <label for="gender">Male</label>
+                    <input type="radio" name='gender' value='male'>
+                    <label for="gender">Female</label>
+                    <input type="radio" name='gender' value='female'>
+                    <label for="gender">Others</label>
+                    <input type="radio" name='gender' value='others'>
+                </div>
+            </div>
+
+            <div class="boxes">
+                <label for="address">Address </label>
+                <textarea style="margin-left: 30px; width: 30%;" id="address" placeholder="Address"
+                    name="address"></textarea>
+
+
+                <label for="image">Upload Photo :</label>
+                <input type="file" id="img" name="image" accept="image/*" onchange="imgbase(this)">
+                <input type="text" name="photodata" id="photodata" style="display:none">
+            </div>
+
+
+            <label class="pakka" for="captcha">Verify CAPTCHA </label>
+            <div class="boxes">
+                <input type="text" id="readcaptcha">
+                <a onclick="refreshcaptcha()" style="margin-top: 10px;">
+                    <svg width="25px" height="25px" ><path d="M12,2.99a9.03,9.03,0,0,1,6.36,2.65L15.986,8.014h5.83a1.146,1.146,0,0,0,1.146-1.146V1.038L20.471,3.529A11.98,11.98,0,0,0,0,12H2.99A9.02,9.02,0,0,1,12,2.99Z"/><path d="M21.01,12A8.994,8.994,0,0,1,5.64,18.36l2.374-2.374H1.993a.956.956,0,0,0-.955.955v6.021l2.491-2.491A11.98,11.98,0,0,0,24,12Z"/></svg>
+                </a>
+                <p id="captcha"></p>
+                <span id="error" style="display:none;margin-top:-50px; justify-content: center; align-items: center;"></span>
+            </div>
+
+            
+
+            <input type="submit" value="Register" id="registersubmit" onclick='verifyregister()'>
+
+
+        </div>
+
+    </form>
+
+    <script>
+    
+    
+        var cta = document.querySelector(".cta");
+        var error = document.getElementById('error');
+        
+        
+        cta.addEventListener('click', function (e) {
+            var text = e.target.nextElementSibling;
+            var loginText = e.target.parentElement;
+            text.classList.toggle('show-hide');
+            loginText.classList.toggle('expand');
+
+        })
+
+        
+
+        function getstarted() {
+            document.querySelector(".wrapper").style.display = "none";
+            document.getElementById('register').style.display = "block";
+            document.getElementById("back").style.display = "block";
+        }
+        
+        function back() {
+            document.querySelector(".wrapper").style.display = "block";
+            document.getElementById('register').style.display = "none";
+            document.getElementById("back").style.display = "none";
+        }
+
+
+        function verifyregister() {
+            a = document.getElementById('namee').value
+            b = document.getElementById('phone').value
+            c = document.getElementById('mail').value
+            d = document.getElementsByName("gender")
+            e = document.getElementById('readcaptcha').value;
+            p = document.getElementById('password').value;
+
+            if (a.length >= 7 && ( a.match(/^[a-zA-Z]/g) && a.match(/\w/) && !a.match(/\W/g) ) && (!a.match(/\s/g)) && (!a.match(/^[0-9]/g)) ) {
+
+                if ((p.length >= 7) && (p.match(/[a-z]/g) && p.match(/[A-Z]/g) && p.match(/[0-9]/g) && !p.match(/\s/g) && p.match(/\W/g))) {
+
+                    if ((b.length == 10) && (b[0] == '9' || b[0] == '8' || b[0] == '7' || b[0] == '6')) {
+
+                        if ((c != "") && (c.match(/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/))) {
+
+                            if (myform.dob.value != '') {
+                                if (myform.gender.value != '') {
+
+                                    if (e == result) {
+
+                                        let foo = prompt('retype password');
+                                        if (foo == p) {
+                                            alert("VALID RESPONSE");
+                                        }
+                                        else {
+                                            alert("incorrect password match")
+                                            event.preventDefault();
+                                        }
+                                    }
+                                    else {
+                                        alert('enter crct CAPTCHA!!!!')
+                                        event.preventDefault();
+                                    }
+                                }
+                                else {
+                                    alert('select atlest one gender')
+                                    event.preventDefault();
+                                }
+                            }
+                            else {
+                                alert('select dob')
+                                event.preventDefault();
+                            }
+                        }
+                        else {
+                            alert('enter a valid mail')
+                            event.preventDefault();
+                        }
+                    }
+                    else {
+                        alert('enter valid phone number')
+                        event.preventDefault();
+                    }
+                }
+                else {
+                    alert('enter valid password')
+                    event.preventDefault();
+                }
+            }
+            else {
+                alert('enter valid username')
+                event.preventDefault();
+            }
+
+        }
+        
+        document.querySelector("#namee").addEventListener("focus", () =>{
+                error.style.display="flex";
+                error.innerText = 'Username must have atleast 7 characters \nUsername Cannot have special character except underscore\nUsername cannot have numeric values as first letter\nUsername cannot have spaces\nfirst letter cannot be a special character/number';
+                error.style.color = 'red';
+                error.style.fontSize = "small";
+        })
+
+        document.querySelector("#password").addEventListener("focus", () =>{
+                error.style.display="flex";
+                error.innerText = 'password must have atleast 7 characters\npassword should contain uppercase,lowercase,numeric and special character values\nPassword cannot have spaces';
+                error.style.color = 'red';
+                error.style.fontSize = "small";
+        })
+
+        document.querySelector("#mail").addEventListener("focus", () =>{
+                error.style.display="flex";
+                error.innerText = 'enter valid mail\nspecial characters other than @ are not allowed';
+                error.style.color = 'red';
+                error.style.fontSize = "small";
+        })
+
+        document.querySelector("#phone").addEventListener("focus", () =>{
+                error.style.display="flex";
+                error.innerText = 'phone number should contain 10 digits\nshould start with 9/8/7/6';
+                error.style.color = 'red';
+                error.style.fontSize = "small";
+        })
+
+        function nameoutfoucus(){
+            error.style.display="none"
+        }
+        
+        var result = '';
+        window.onload = function what() {
+            result = Math.random().toString(36).substring(2, 7);
+            document.getElementById('captcha').innerHTML = result;
+        };
+        function refreshcaptcha() {
+            result = Math.random().toString(36).substring(2, 7);
+            document.getElementById('captcha').innerHTML = result;
+        }
+        
+        function imgbase(a){
+			var file = a.files[0];
+        	var reader = new FileReader();
+         
+      	    reader.onloadend = function () {
+				  document.getElementById("photodata").value=reader.result;
+        }
+        	reader.readAsDataURL(file);
+		}
+    </script>
+</body>
+
+</html>
