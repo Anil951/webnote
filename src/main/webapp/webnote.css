@@ -1,0 +1,286 @@
+html {
+	font-family: 'Roboto Mono', monospace;
+	background-color: black;
+}
+
+#head {
+	position: relative;
+	top: 10px;
+	font-size: 230%;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0px;
+	width: fit-content;
+	background-color: black;
+	font-family: 'Poppins', monospace;
+	font-weight: bold;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+	position: relative;
+	width: 100%;
+	font-family: 'Roboto Mono', monospace;
+	background-color: black;
+}
+
+#newmain {
+	display: flex;
+	flex-direction: column;
+	margin-top: 50px;
+	position: relative;
+	width: 100%;
+	font-family: 'Roboto Mono', monospace;
+	background-color: black;
+	justify-content: center;
+    align-items: center;
+}
+
+
+#welcome {
+	font-family: 'Poppins', monospace;
+	padding-left: 20px;
+	margin-top: -30px;
+	margin-bottom: 30px;
+}
+
+#welcomename {
+	text-decoration: underline solid skyblue 2px;
+	text-underline-offset: 7px;
+	cursor: pointer;
+}
+
+#welcomename:hover {
+	color: skyblue;
+}
+
+#name {
+	min-width: 5%;
+	border: 0px;
+	border-radius: 5px;
+	width: 15%;
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	font-family: 'Roboto Mono', monospace;
+	text-align: center;
+}
+
+#mynotes {
+	font-family: 'Poppins', monospace;
+	width: 10%;
+	height: 20px;
+	text-decoration: underline solid skyblue 2px;
+	text-underline-offset: 7px;
+	cursor: pointer;
+	font-size: 20px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:20px;
+	margin-bottom: 30px;
+}
+
+
+#mynoteslink:hover {
+	color: skyblue;
+}
+
+
+#logout,#history,#editdetails,#savedetails , #delete{
+	position: fixed;
+	right: 10px;
+	top: 15px;
+	width: 10%;
+	height: 30px;
+	font-family: 'Roboto Mono', monospace;
+	font-size: small;
+	border: 0px;
+	border-radius: 5px;
+	border: 0px;
+}
+
+
+
+#editdetails,#savedetails{
+	top:85px;
+}
+
+
+
+#note {
+	resize: none;
+	height: 250px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	font-family: 'Roboto Mono', monospace;
+	text-align: center;
+	justify-content: center;
+	border: 0px;
+	border-radius: 5px;
+}
+
+#note::placeholder, #name::placeholder {
+	text-align: center;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: black;
+}
+
+#note::placeholder {
+	padding: 80px;
+}
+
+#note:disabled, #name:disabled {
+	color: black;
+	background-color: rgb(148, 145, 145);
+}
+
+#save,#edit, #download {
+	width: 15%;
+	height: 30px;
+	margin-left: 60%;
+	margin-right: auto;
+	margin-bottom: 10px;
+	font-family: 'Roboto Mono', monospace;
+	border: 0px;
+	border-radius: 5px;
+}
+
+
+#edit:hover, #save:hover, #logout:hover, #history:hover, #back:hover,#editdetails:hover,#savedetails:hover {
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: 1px solid white;
+	transition-duration: 0.5s;
+}
+
+#delete:hover {
+	background-color: rgb(0, 0, 0);
+	color: rgb(240, 98, 98);
+	border: 1px solid rgb(240, 98, 98);
+	transition-duration: 0.5s;
+}
+
+#download:hover,#clearhistory:hover {
+	background-color: rgb(0, 0, 0);
+	color: lightgreen;
+	border: 1px solid lightgreen;
+	transition-duration: 0.5s;
+}
+
+#historypage {
+	width: max-content;
+	height: fit-content;
+	margin-top: 70px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#profile div{
+	width: max-content;
+	height: max-content;
+	margin-top: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	display:flex;
+	flex-direction:row;
+	gap:30px;
+}
+
+table,td, th {
+	border:2px 2px 2px 0px solid white;
+	border-collapse: collapse;
+	padding: 5px;
+	padding-left: 40px;
+}
+#profileimg img{
+    position:absolute;
+    left:30%;
+    top:200px;
+	justify-content:center;
+	border-radius:50%;
+	object-fit:cover;
+}
+
+#profiledetails{
+	width:fit-content;
+	top:50px;
+	position:absolute;
+	right:20%;
+	
+}
+td input{
+	background-color:black;
+	border:0px;
+	color:white;
+	font-family: 'Roboto Mono', monospace;
+	font-size:large;
+	width:max-content;
+}
+
+
+#button-container {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 180px;
+}
+
+#plus-button {
+    background-color: skyblue;
+    border: 2px solid skyblue; /* Add this border property */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s; /* Add border-color to transition */
+    font-family: 'Poppins', monospace;
+}
+
+#plus-button:hover {
+    background-color: black;
+    color: skyblue;
+    border-color: skyblue; /* Change border color on hover */
+    transform: scale(1.1);
+}
+
+#plus-button::after {
+    content: "Add Note";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#plus-button:hover::after {
+    opacity: 1;
+}
+
+.card {
+    position: relative; /* This makes the delete button positioned inside the card */
+}
+
+
+
+
+
+
+
+

@@ -48,8 +48,6 @@
 			int i = stmt.executeUpdate("insert into formdetails(username,password,phone,email,dob,gender,address,image) values('"+namee+"','"+password+"','"+phone+"','"+mail+"','"+dob+"','"+gender+"','"+address+"','"+image+"');");
 			out.println("data inserted successfully");
 			
-			String r2 = String.format("create table %s(id int not null auto_increment,filename varchar(255),note text,primary key (id));",namee);
-			stmt.executeUpdate(r2);
 			%>
 			<script>
 		

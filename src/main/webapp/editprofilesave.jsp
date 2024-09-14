@@ -29,13 +29,7 @@
 
 		"jdbc:mysql://localhost:3306/project?characterEncoding=latin1", "anil", "anil");
 
-		//here project is database name, root is anil and anil
 
-		//PreparedStatement pst = con.prepareStatement("Select username,password from formdetails where username=? and password=?");
-		//pst.setString(1, username);
-		//pst.setString(2, passwordd);
-		//ResultSet rs = pst.executeQuery();
-		
 		Statement stmt = con.createStatement(); 
 		String r1 = String.format("UPDATE formdetails SET username='%s',password = '%s' WHERE username = '%s'",username,passwordd,name);
 		stmt.executeUpdate(r1);
