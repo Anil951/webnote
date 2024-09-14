@@ -19,15 +19,15 @@ WebNote is a fully-featured notes management system that allows users to create,
 ## Database Setup
   ```sql
   create table formdetails(
-  id int not null auto_increment,
-  username varchar(255) not null,
-  password varchar(255) not null,
-  phone int(10) not null,
-  email varchar(255) not null,
-  dob varchar(255) not null,
-  gender varchar(255) not null,
-  address varchar(500),
-  primary key (id)
+    id int not null auto_increment,
+    username varchar(255) not null,
+    password varchar(255) not null,
+    phone int(10) not null,
+    email varchar(255) not null,
+    dob varchar(255) not null,
+    gender varchar(255) not null,
+    address varchar(500),
+    primary key (id)
   );
   ```
 
